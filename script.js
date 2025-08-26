@@ -1038,26 +1038,6 @@
         }, 1000); // 2000ms = 2s
     });
 
-    const burger = document.getElementById('burgerMenu');
-    const nav = document.querySelector('nav.side');
-
-    // Toggle sidebar on burger click
-    burger.addEventListener('click', (e) => {
-        nav.classList.add('open');
-        burger.style.display = 'none';
-    });
-
-    // Click outside to close sidebar
-    document.addEventListener('click', (e) => {
-        const isClickInsideNav = nav.contains(e.target);
-        const isClickOnBurger = burger.contains(e.target);
-
-        if (!isClickInsideNav && !isClickOnBurger && nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            burger.style.display = 'flex';
-        }
-    });
-
     const htmlRoot = document.getElementById('html-root');
     const paletteSelector = document.getElementById('paletteSelector');
 
