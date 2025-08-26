@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Lobster&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Radley:ital@0;1&display=swap');
+
+:root {
+    --bg: #0d0d0d;
+    /* deep space background */
+    --bg-end: #060606;
+    /* deeper space gradient */
+    --panel: #1f1f1f;
+    /* panel color */
+    --muted: #a0f0ff;
+    /* faint star highlights */
+    --accent: #fffdd5;
+    /* Sun - brightest yellow */
+    --accent-2: #ffdfd4;
+    /* planets - coral/orange shades */
+    --line: rgba(255, 255, 255, 0.2);
+    --line-dashed: rgba(255, 255, 255, 0.15);
+    --nav-width: 240px;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-2: rgba(255, 255, 255, 0.02);
+    --radius: 8px;
+
+    --color-root: #fff200;
+    /* Sun */
+    --color-family: #ff7f50;
+    /* Planets (orange/coral) */
+    --color-subgenre: #00bfff;
+    /* Moons, icy planets, orbits - blueish */
+    --color-artist: #0c4b4b;
+    /* Deep space, dark nebulae */
+
+    --nav-width: 40px;
+    /* collapsed width */
+    --nav-width-exp: 240px;
+    /* expanded width */
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+/* Layout */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg), #04121a);
+    color: #eaf3fb;
+}
+
+select {
+    padding: 8px 12px;
+    /* margin-bottom: 20px; */
+    border-radius: var(--radius);
+    border: none;
+    background: var(--panel);
+    color: var(--muted);
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    /* font-size: 16px; */
+}
+
+select::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.panel {
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background: var(--panel);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Left vertical nav (minimalistic, like chat UI) */
+nav.side {
+    width: var(--nav-width-exp);
+    background: linear-gradient(180deg, var(--bg), black);
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 18px 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: space-between;
+    z-index: 5;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+nav.side::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.brand {
+    padding-block: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 6px 18px rgba(106, 225, 255, 0.08), inset 0 -6px 16px rgba(181, 140, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #022;
+    font-size: 18px;
+}
+
+.brand h1 {
+    font-size: 14px;
+    margin: 0;
+    display: flex; font-size: 30px; padding-bottom: 20px; justify-content: center; overflow: hidden;
+}
+
+.brand p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.nav-item {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    background: var(--glass);
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px rgba(106, 225, 255, 0.02);
+}
+
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(106, 225, 255, 0.06), rgba(181, 140, 255, 0.03));
+    color: var(--accent);
+}
+
+.nav-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px
+}
+
+.small {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 8px;
+    border-radius: 8px;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 13px;
+    text-align: center;
+}
+
+.btn:hover {
+    border-color: rgba(106, 225, 255, 0.12);
+    color: var(--accent)
+}
+
+/* Info area at bottom */
+.info {
+    margin-top: auto;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.info h3 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: #fff
+}
+
+.info .meta {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+/* Main canvas area */
+main.canvas-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+canvas#galaxy {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+}
+
+canvas#galaxy:active {
+    cursor: grabbing
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(2, 8, 12, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #eaf3fb;
+    min-width: 140px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    transform-origin: left top;
+    transition: transform .08s ease, opacity .12s;
+    opacity: 0;
+}
+
+.tooltip.visible {
+    opacity: 1
+}
+
+/* Node label small */
+.node-label {
+    position: absolute;
+    pointer-events: none;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    transform: translate(-50%, -120%);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Splash screen sliding up */
+#splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+    radial-gradient(circle at top, var(--bg), transparent 80%), 
+    radial-gradient(circle at bottom, var(--bg), transparent 80%), 
+    black; /* base color for the middle */
+
+    /* deep space background */
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    z-index: 10;
+    filter: blur(0px);
+    opacity: 1;
+    transition: filter 2s cubic-bezier(0.4, 0, 0.2, 1.5),
+        opacity 2s cubic-bezier(0.4, 0, 0.2, 1.5);
+}
+
+/* When hidden, slide up out of view */
+#splash.hidden {
+
+    filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+}
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.burger {
+    display: none;
+}
+
+/* Responsive: collapse nav on small screens */
+/* Small screens */
+@media (max-width: 1000px) {
+
+    nav.side {
+        width: var(--nav-width);
+    }
+
+    /* Hide text/details */
+    .brand h1,
+    .brand p,
+    .small,
+    .btn,
+    #paletteSelector,
+    .nav-icon,
+    .nav-item,
+    .info,
+    .nav-item>div:not(.nav-icon) {
+        display: none;
+    }
+
+    /* Burger */
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+        width: 100%;
+        height: 50px;
+        position: relative;
+        z-index: 20;
+    }
+
+    /* Expanded sidebar overlay */
+    nav.side.open {
+        width: var(--nav-width-exp);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow: auto;
+        /* background: var(--bg); */
+        transition: width 0.3s ease;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.side.open .brand h1{
+        display: grid;
+        align-items: center;
+    }
+    nav.side.open .brand p,
+    nav.side.open .small,
+    nav.side.open .info,
+    nav.side.open .btn,    
+    nav.side.open #paletteSelector,
+    nav.side.open .nav-item>div:not(.nav-icon) {
+        display: block;
+    }
+
+    nav.side.open .nav-item{
+        display: grid;
+    }
+
+    nav.side.open .nav-item {
+        justify-content: flex-start;
+        padding: 8px;
+    }
+
+    .burger.hidden {
+        display: none;
+    }
+}

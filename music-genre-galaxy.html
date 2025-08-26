@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" id="html-root">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Music Genre Galaxy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="splash" style="display: grid; align-content: center; gap: 20px; ">
+    <div style="display: grid;justify-items: center;">Resonova</div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <p style="font-size: 20px; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; margin: 0; padding: 10px; opacity: 0.7;">
+    &copy; 2025 SoultySprings. All rights reserved.</p>
+
+
+
+  </div>
+
+  <div class="app" role="application" aria-label="Music Genre Galaxy">
+
+    <!-- Sidebar -->
+    <nav class="side" aria-label="Sidebar">
+      <div class="burger" id="burgerMenu">☰</div>
+      <div class="sidebar">
+        <div class="brand" role="banner">
+          <div>
+            <h1>Resonova</h1>
+            <p class="small">Explore Genres as if it were a universe 🚀✨</p>
+          </div>
+        </div>
+
+        <div class="nav-item active" data-action="explore" tabindex="0">
+          <div>
+            <div>Explore</div>
+            <div class="small">genre map 🌠</div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <div>🎨 Click any palette below to change colors!</div>
+          <select id="paletteSelector" size="5" style="cursor: pointer;">
+            <option value="midnightPurple">🌙 Midnight Purple</option>
+            <option value="obsidian">🖤 Obsidian</option>
+            <option value="midnightBlue">🔵 Midnight Blue</option>
+            <option value="solarFlare">☀️ Solar Flare</option>
+            <option value="forestTwilight">🌲 Forest Twilight</option>
+            <option value="crimsonNight">🩸 Crimson Night</option>
+            <option value="icyCave">❄️ Icy Cave</option>
+            <option value="sunsetGlow">🌇 Sunset Glow</option>
+            <option value="violetDream">💜 Violet Dream</option>
+            <option value="emeraldDusk">💚 Emerald Dusk</option>
+            <option value="amberTwilight">🟠 Amber Twilight</option>
+            <option value="sapphireMoon">🔹 Sapphire Moon</option>
+            <option value="roseQuartz">🌹 Rose Quartz</option>
+            <option value="neonCity">🌃 Neon City</option>
+            <option value="cosmicRain">🌧 Cosmic Rain</option>
+            <option value="lavaFlow">🌋 Lava Flow</option>
+            <option value="auroraBorealis">🌌 Aurora Borealis</option>
+            <option value="twilightOrchid">🌸 Twilight Orchid</option>
+            <option value="desertDusk">🏜 Desert Dusk</option>
+            <option value="sapphireNight">💎 Sapphire Night</option>
+            <option value="roseSunset">🌅 Rose Sunset</option>
+            <option value="neonOcean">🌊 Neon Ocean</option>
+            <option value="emberGlow">🔥 Ember Glow</option>
+          </select>
+          <div id="colorPreview"
+            style="height: 30px; border-radius: 5px; width: 100%; text-align:center; line-height:30px; color:white; font-weight:bold;">
+            Hover a palette to preview 🎨
+          </div>
+        </div>
+
+        <div class="controls" aria-hidden="false"
+          style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+          <button class="btn" id="shuffleBtn" title="Shuffle positions">🔀 Shuffle</button>
+          <button class="btn" id="resetBtn" title="Reset view">♻️ Reset</button>
+          <button class="btn" id="toggleLabelsBtn" title="Toggle labels">🪄 Toggle Labels</button>
+        </div>
+
+        <div class="info" id="info" aria-live="polite" style="margin-top: 20px;">
+          <h3>Click a genre ✨</h3>
+          <div class="meta" id="infoContent">Hover a star to see genre. Click to fix focus and show quick info. 🌟</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main canvas -->
+    <main class="canvas-wrap" style="position: relative;">
+      <canvas id="galaxy" aria-label="Music genre galaxy visualization"
+        style="border: 1px solid #222; border-radius: 10px;"></canvas>
+      <div class="tooltip" id="tooltip" role="tooltip"
+        style="position:absolute; padding:6px 10px; background:#111; color:#fff; border-radius:5px; pointer-events:none; opacity:0; transition:0.2s;">
+        ⭐ Tooltip</div>
+    </main>
+
+  </div>
+</body>
+
+
+
+<script src="script.js"></script>
+
+</html>
