@@ -334,17 +334,13 @@ canvas#galaxy:active {
 
 /* Responsive: collapse nav on small screens */
 /* Small screens */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
 
     nav.side {
-        height: 100%;
-        width: 100%;
-        
-justify-content: center
+        width: var(--nav-width);
     }
 
     /* Hide text/details */
-    .brand,
     .brand h1,
     .brand p,
     .small,
@@ -359,14 +355,13 @@ justify-content: center
 
     /* Burger */
     .burger {
-        color: var(--accent);
-        padding-inline: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 22px;
         cursor: pointer;
-        /* width: 100%; */
+        width: 100%;
+        height: 50px;
         position: relative;
         z-index: 20;
     }
