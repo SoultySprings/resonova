@@ -787,7 +787,7 @@ async function loadMusic() {
         x: 0,
         y: 0,
         vx: 0, vy: 0,
-        r: 5 + (n.pop || 0.3) * 8,
+        r: 1 + (n.pop || 0.3) * 8,
         fixed: false
     }));
 
@@ -807,9 +807,9 @@ async function loadMusic() {
     // });
 
     // Simulation variables
-    const repulsion = 20000; // higher => more spread
+    const repulsion = 1000; // higher => more spread
     const friction = 0.8;
-    const springBase = 0.001;
+    const springBase = 1;
     const dt = 1;
 
     // View transform
@@ -859,7 +859,7 @@ async function loadMusic() {
             if (!a || !b) return;
             const dx = b.x - a.x, dy = b.y - a.y;
             const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            const desired = 200 * (1 / (a.pop + b.pop)); // dynamic rest length
+            const desired = 40 * (1 / (a.pop + b.pop)); // dynamic rest length
             const k = (l.strength || springBase);
             const fx = k * (dist - desired) * (dx / dist);
             const fy = k * (dist - desired) * (dy / dist);
