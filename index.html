@@ -2,12 +2,12 @@
 <html lang="en" id="html-root">
 
 <head>
-  
+
   <link rel="icon" type="image/png" href="favicon.svg" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="shortcut icon" href="favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <!-- <link rel="manifest" href="site.webmanifest" /> -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Music Genre Galaxy</title>
@@ -17,13 +17,14 @@
 <body>
   <div id="splash" style="display: grid; align-content: center; gap: 20px; ">
     <div style="display: grid;justify-items: center;">Resonova</div>
-
-    <div class="progress-bar" id="progressBar"></div>
-    <p style="font-size: 20px; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; margin: 0; padding: 10px; opacity: 0.7;">
-    &copy; 2025 SoultySprings. All rights reserved.</p>
-
-
-
+    <div class="progress-container">
+      <span>Placing nodes, please wait!</span>
+      <div class="progress-bar" id="progressBar">
+      </div>
+    </div>
+    <p
+      style="font-size: 20px; position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; margin: 0; padding: 10px; opacity: 0.7;">
+      &copy; 2025 SoultySprings. All rights reserved.</p>
   </div>
 
   <div class="app" role="application" aria-label="Music Genre Galaxy">
@@ -35,14 +36,7 @@
         <div class="brand" role="banner">
           <div>
             <h1>Resonova</h1>
-            <p class="small">Explore Genres as if it were a universe 🚀✨</p>
-          </div>
-        </div>
-
-        <div class="nav-item active" data-action="explore" tabindex="0">
-          <div>
-            <div>Explore</div>
-            <div class="small">genre map 🌠</div>
+            <p class="small">Music BUT as if it were a universe 🚀✨</p>
           </div>
         </div>
 
@@ -79,6 +73,15 @@
           </div>
         </div>
 
+        <div id="sidebar2" class="nav-item" style="gap:0px">
+          <h2>Nodes </h2>
+          Scroll and click to see them.
+          <ul id="nodeList" class="listnodes"></ul>
+        </div>
+        <div class="info" id="info" aria-live="polite" style="margin-top: 20px;">
+          <h3>Click a genre ✨</h3>
+          <div class="meta" id="infoContent">Hover a star to see genre. Click to fix focus and show quick info. 🌟</div>
+        </div>
         <div class="controls" aria-hidden="false"
           style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
           <button class="btn" id="shuffleBtn" title="Shuffle positions">🔀 Shuffle</button>
@@ -86,10 +89,7 @@
           <button class="btn" id="toggleLabelsBtn" title="Toggle labels">🪄 Toggle Labels</button>
         </div>
 
-        <div class="info" id="info" aria-live="polite" style="margin-top: 20px;">
-          <h3>Click a genre ✨</h3>
-          <div class="meta" id="infoContent">Hover a star to see genre. Click to fix focus and show quick info. 🌟</div>
-        </div>
+
       </div>
     </nav>
 
@@ -98,8 +98,9 @@
       <canvas id="galaxy" aria-label="Music genre galaxy visualization"
         style="border: 1px solid #222; border-radius: 10px;"></canvas>
       <div class="tooltip" id="tooltip" role="tooltip"
-        style="position:absolute; padding:6px 10px; background:#111; color:#fff; border-radius:5px; pointer-events:none; opacity:0; transition:0.2s;">
-        ⭐ Tooltip</div>
+        style="position:absolute; padding:6px 10px; background:#111; color:#fff; border-radius:5px; pointer-events:none; transition:0.2s;">
+        ⭐ Tooltip
+      </div>
     </main>
 
   </div>

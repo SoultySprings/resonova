@@ -31,7 +31,7 @@
 
     --nav-width: 40px;
     /* collapsed width */
-    --nav-width-exp: 240px;
+    --nav-width-exp: 320px;
     /* expanded width */
 
     font-family: "DM Sans", sans-serif;
@@ -45,6 +45,27 @@ body {
     margin: 0;
     background: linear-gradient(180deg, var(--bg), #04121a);
     color: #eaf3fb;
+}
+
+.listnodes {
+    list-style-type: none;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 12px;
+    /* margin-bottom: 20px; */
+    border-radius: var(--radius);
+    border: none;
+    background: var(--panel);
+    color: var(--muted);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 70px;
+    overflow: auto;
+}
+
+h2 {
+    margin-block: 0px;
 }
 
 select {
@@ -97,6 +118,7 @@ nav.side {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 nav.side::-webkit-scrollbar {
     display: none;
 }
@@ -108,6 +130,7 @@ nav.side::-webkit-scrollbar {
     display: flex;
     gap: 10px;
     align-items: center;
+    justify-content: center;
 }
 
 .logo {
@@ -127,7 +150,11 @@ nav.side::-webkit-scrollbar {
 .brand h1 {
     font-size: 14px;
     margin: 0;
-    display: flex; font-size: 30px; padding-bottom: 20px; justify-content: center; overflow: hidden;
+    display: flex;
+    font-size: 30px;
+    padding-bottom: 20px;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .brand p {
@@ -258,6 +285,7 @@ canvas#galaxy:active {
     border-radius: 8px;
     font-size: 13px;
     color: #eaf3fb;
+    width: 200px;
     min-width: 140px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
     transform-origin: left top;
@@ -287,10 +315,11 @@ canvas#galaxy:active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-    radial-gradient(circle at top, var(--bg), transparent 80%), 
-    radial-gradient(circle at bottom, var(--bg), transparent 80%), 
-    black; /* base color for the middle */
+    background:
+        radial-gradient(circle at top, var(--bg), transparent 80%),
+        radial-gradient(circle at bottom, var(--bg), transparent 80%),
+        black;
+    /* base color for the middle */
 
     /* deep space background */
     color: var(--accent);
@@ -312,20 +341,57 @@ canvas#galaxy:active {
     opacity: 0;
     pointer-events: none;
 }
+
 .progress-container {
+    position: relative;
+    /* Crucial for positioning the inner bar */
+    display: flex;
+    /* Helps center the text */
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
-    height: 20px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
+    height: 24px;
+    /* Slightly taller for better text fit */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     overflow: hidden;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* This is the gray, background text */
+.progress-container>span {
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .progress-bar {
+    /* This bar sits on top and reveals the colored text as it grows */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 0%;
-    height: 20px;
+    height: 100%;
     background: var(--accent);
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
+    /* border-radius: 12px; */
+    overflow: hidden;
+
+    /* This transition animates the width */
+    transition: width 4s cubic-bezier(0.895, 0.03, 0.83, 0.22);
+}
+
+/* This is the bright, foreground text inside the progress bar */
+.progress-bar>span {
+    color: transparent;
+    /* A dark color for contrast against the accent background */
+    min-width: max-content;
+    /* Prevents the text from wrapping */
 }
 
 .burger {
@@ -379,20 +445,21 @@ canvas#galaxy:active {
         box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
     }
 
-    nav.side.open .brand h1{
+    nav.side.open .brand h1 {
         display: grid;
         align-items: center;
     }
+
     nav.side.open .brand p,
     nav.side.open .small,
     nav.side.open .info,
-    nav.side.open .btn,    
+    nav.side.open .btn,
     nav.side.open #paletteSelector,
     nav.side.open .nav-item>div:not(.nav-icon) {
         display: block;
     }
 
-    nav.side.open .nav-item{
+    nav.side.open .nav-item {
         display: grid;
     }
 
