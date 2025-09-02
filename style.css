@@ -1,33 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Lobster&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Radley:ital@0;1&display=swap');
 
 :root {
-    --bg: #0d0d0d;
-    /* deep space background */
-    --bg-end: #060606;
-    /* deeper space gradient */
-    --panel: #1f1f1f;
-    /* panel color */
-    --muted: #a0f0ff;
-    /* faint star highlights */
-    --accent: #fffdd5;
-    /* Sun - brightest yellow */
-    --accent-2: #ffdfd4;
-    /* planets - coral/orange shades */
-    --line: rgba(255, 255, 255, 0.2);
+    --bg: #0a051f;
+    --bg-end: #050210;
+    --panel: #1a0f33;
+    --muted: #b0ffff;
+    --accent: #ffddcc;
+    --accent-2: #ffaa66;
+    --line: rgba(255, 85, 0, 0.2);
     --line-dashed: rgba(255, 255, 255, 0.15);
+    --color-root: #ff5500;
+    --color-family: #00b3b3;
+    --color-subgenre: #b0ffff;
+    --color-artist: #00ffff;
+
     --nav-width: 240px;
     --glass: rgba(255, 255, 255, 0.05);
     --glass-2: rgba(255, 255, 255, 0.02);
     --radius: 8px;
-
-    --color-root: #fff200;
-    /* Sun */
-    --color-family: #ff7f50;
-    /* Planets (orange/coral) */
-    --color-subgenre: #00bfff;
-    /* Moons, icy planets, orbits - blueish */
-    --color-artist: #0c4b4b;
-    /* Deep space, dark nebulae */
 
     --nav-width: 40px;
     /* collapsed width */
